@@ -1,5 +1,0 @@
-need to do:
-
-finish webpack config
-learn src-sw.js's asset caching
-js files in client
