@@ -7,14 +7,15 @@ window.addEventListener('beforeinstallprompt', (event) => {
     //event in this case is an object containing meta info like app name, icon, etc.
     //this info will be pulled when user clicks to install
     window.deferredPrompt = event;
+    butInstall.classList.toggle('hidden', false);
 });
 
 
 // TODO: Implement a click event handler on the `butInstall` element
 butInstall.addEventListener('click', async () => {
-
+    const promptEvent = window.deferredPrompt;
     //if not event is stored from prior fn, stop running consequent code
-    if (!window.deferredPrompt) {
+    if (!promptEvent) {
         return;
     }
     // prompt user to install app
